@@ -111,9 +111,8 @@ export default defineConfig(({ command, isPreview }) => ({
     ...(command === "build" || isPreview
       ? [
           nitro({
-            preset: "vercel",
-            serverDir: "./server",
-          }),
+  preset: "vercel",
+}),
         ]
       : []),
     viteReact(),
