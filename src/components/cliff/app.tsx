@@ -50,7 +50,19 @@ export function CliffApp() {
 
   useEffect(() => {
     void Promise.resolve(useCliff.persist.rehydrate());
-  }, []);
+  }, []);  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("upgraded") !== "1") return;
+
+    const planParam = params.get("plan") || "";
+    if (planParam.startsWith("room")) {
+      applyPlan("room");
+    } else if (planParam.startsWith("slate")) {
+      applyPlan("slate");
+    }
+
+    window.history.replaceState({}, "", window.location.pathname);
+  }, [applyPlan]);
 
   const active = activeSeries(series, activeId);
   const cap = PLANS[plan];
