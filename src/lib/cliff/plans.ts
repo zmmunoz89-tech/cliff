@@ -23,7 +23,7 @@ export const PLANS: Record<PlanId, Plan> = {
   room: {
     id: "room",
     name: "Room",
-    price: 39,
+    price: 19,
     series: 6,
     episodes: 30,
     polishes: 12,
@@ -32,7 +32,7 @@ export const PLANS: Record<PlanId, Plan> = {
   slate: {
     id: "slate",
     name: "Slate",
-    price: 129,
+    price: 49,
     series: 24,
     episodes: 60,
     polishes: 40,
